@@ -1,14 +1,18 @@
 import React from "react";
 
-function App() {
-  return (
-    <main className="container mt-5">
+// the root has a background
+/*  <main className="container mt-5">
       <section className="row">
         <div className="col col-12">
           <h1>Hola mundo</h1>
         </div>
       </section>
-    </main>
+    </main>*/
+
+function App() {
+  return (
+    <>
+    </>
   );
 }
 
