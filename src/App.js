@@ -1,17 +1,18 @@
 import React from "react";
+// import classNames from "classnames";
+
+import Header from "./components/Header";
+import MainList from "./components/MainList";
+import Footer from "./components/Footer";
 
 // the root has a background
-/*  <main className="container mt-5">
-      <section className="row">
-        <div className="col col-12">
-          <h1>Hola mundo</h1>
-        </div>
-      </section>
-    </main>*/
 
 function App() {
   return (
     <>
+      <Header />
+      <MainList />
+      <Footer />
     </>
   );
 }

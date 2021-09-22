@@ -62,6 +62,10 @@ module.exports = {
         endOfLine: "auto",
       },
     ],
+    "react/prefer-stateless-function": [
+      "enabled",
+      { ignorePureComponents: "ignorePureComponents" },
+    ],
     "react/jsx-filename-extension": "off",
     "import/prefer-default-export": "off",
     "prefer-destructuring": "off",
