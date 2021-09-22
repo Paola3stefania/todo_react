@@ -63,7 +63,7 @@ module.exports = {
       },
     ],
     "react/prefer-stateless-function": [
-      "enabled",
+      "off",
       { ignorePureComponents: "ignorePureComponents" },
     ],
     "react/jsx-filename-extension": "off",

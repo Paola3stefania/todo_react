@@ -2,7 +2,7 @@
  has a child input */
 
 import React, { Component } from "react";
-import Input from "../Input";
+import TaskInput from "../TaskInput";
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class Header extends Component {
@@ -10,7 +10,7 @@ export default class Header extends Component {
     return (
       <header>
         <h1>T O D O</h1>
-        <Input />
+        <TaskInput />
       </header>
     );
   }
