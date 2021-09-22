@@ -1,9 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/_variables.scss";
 // solo importar lo q necesito cambiar
 
 footer {
   background: {
-    color: $blue;
+    color: $gray-100;
   }
 
   ;

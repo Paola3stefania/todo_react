@@ -7,9 +7,11 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import { toDoS } from "./utils/toDoExamples";
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App {...toDoS} />
   </React.StrictMode>,
   document.getElementById("root"),
 );
