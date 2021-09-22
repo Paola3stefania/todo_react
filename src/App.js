@@ -1,26 +1,23 @@
 import React from "react";
-// import classNames from "classnames";
 
 import Header from "./components/Header";
 import MainList from "./components/MainList";
 import Footer from "./components/Footer";
-// import classNames from "classnames";
 
-// the root has a background
-import { saveIntoLocal, getLocalStorage } from "./utils/saveIntoClient";
+import { toDoS } from "./utils/toDoExamples";
 
-const LOCAL_STORAGE_KEY = "testing-todos";
+//* the App needs to know all the todo to pass it to
+//* the Footer for the COUNTER and to the MainList for Render them
 
-// the App uses the props but it not delivers them to the children
-// only the App has the key
+// *TODO -- rouer fot every page of the footer on click
+// *TODO __ headaer input onchange sets new value to local
 
-function App(props) {
-  saveIntoLocal(LOCAL_STORAGE_KEY, props);
+function App() {
+  const toDoList = toDoS;
 
-  const arrayObjetos = JSON.parse(getLocalStorage(LOCAL_STORAGE_KEY));
-  const toDoList = Object.values(arrayObjetos);
   // text
   const textList = toDoList.map((obj) => obj.text);
+  console.log(textList);
 
   return (
     <div className="app-container">
