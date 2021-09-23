@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import Task from "../Task";
+import Ilustration from "../Ilustration";
 
 // renders the list with the todos
 // its a ul component
@@ -12,13 +14,28 @@ import Task from "../Task";
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class MainList extends Component {
+  constructor(props) {
+    super(props);
+    const { location } = this.props;
+    const { tasks } = this.props;
+    this.location = location;
+    this.tasks = tasks;
+    // eslint-disable-next-line
+    console.log(this.props);
+    // eslint-disable-next-line
+    console.log("soy los tasks: ", this.tasks);
+  }
+
   render() {
     return (
       <div>
-        <p>Im the mainList</p>
-        <ul>
-          To do
-          <Task />
+        <p>IM THE LIST FOR: {this.location.pathname} </p>
+        <ul {...this.tasks}>
+          {this.tasks &&
+            this.tasks.map((todos) => {
+              return <Task key={todos.id} tasks={todos} />;
+            })}
+          {!this.tasks && <Ilustration />}
         </ul>
       </div>
     );

@@ -8,10 +8,18 @@ import React, { Component } from "react";
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class Task extends Component {
+  constructor(props) {
+    super(props);
+    // eslint-disable-next-line
+    console.log("props de taks: ", this.props);
+    const { tasks } = this.props;
+    this.tasks = tasks;
+  }
+
   render() {
     return (
       <li>
-        <p>hello</p>
+        <p>{this.tasks.text}</p>
       </li>
     );
   }

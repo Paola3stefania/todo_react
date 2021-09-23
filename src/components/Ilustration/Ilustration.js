@@ -6,7 +6,7 @@ export default class Ilustration extends Component {
   render() {
     return (
       <div>
-        <p>Im the ilustration</p>
+        <p>I WILL BE AN AWESOME DRAWING .... No Tasks !</p>
       </div>
     );
   }

@@ -14,7 +14,7 @@ export const toDoS = [
   {
     id: 2,
     text: "Bien hecho ! Estoy completa :)",
-    isEditing: true,
+    isEditing: false,
     done: true,
   },
 ];

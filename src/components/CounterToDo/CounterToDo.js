@@ -4,10 +4,20 @@ import React, { Component } from "react";
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class CounterToDo extends Component {
+  constructor(props) {
+    super(props);
+    // eslint-disable-next-line
+    console.log(this.props);
+
+    const { quantity } = this.props;
+
+    this.quantity = quantity;
+  }
+
   render() {
     return (
       <div>
-        <p>x items Left</p>
+        <p>{this.quantity} items Left</p>
       </div>
     );
   }
