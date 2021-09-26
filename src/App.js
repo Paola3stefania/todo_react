@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import MainList from "./components/MainList";
 import Footer from "./components/Footer";
 
-import { startDemo, getLocalStorageObject } from "./utils/demo";
+import { startDemo, getLocalStorageObject, handleSubmit } from "./utils/demo";
 
 //* the App needs to know all the todo to pass it to
 //* the Footer for the COUNTER and to the MainList for Render them
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <Header />
+      <Header handleSubmit={handleSubmit} />
       <BrowserRouter>
         <Route
           path="/"
@@ -29,6 +29,7 @@ function App() {
               <MainList
                 {...routeProps}
                 {...getLocalStorageObject("task-todos")}
+                handleSubmit={handleSubmit}
               />
               <Footer {...getLocalStorageObject("task-todos")} />
             </>
@@ -42,6 +43,7 @@ function App() {
               <MainList
                 {...routeProps}
                 {...getLocalStorageObject("task-active")}
+                handleSubmit={handleSubmit}
               />
               <Footer {...getLocalStorageObject("task-active")} />
             </>
@@ -55,6 +57,7 @@ function App() {
               <MainList
                 {...routeProps}
                 {...getLocalStorageObject("task-completed")}
+                handleSubmit={handleSubmit}
               />
               <Footer {...getLocalStorageObject("task-completed")} />
             </>

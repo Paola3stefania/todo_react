@@ -30,12 +30,16 @@ export default class Footer extends Component {
 
   render() {
     return (
-      <footer>
-        <CounterToDo quantity={this.todoQuantity} />
-        <FooterNav />
-        <Button onClick={() => startDemo()}>Demo</Button>
-        <Button onClick={() => clearCompleted()}>Clear Completed</Button>
-        <Button onClick={() => localStorage.clear()}>Clear All</Button>
+      <footer className="d-flex flex-column">
+        <div className="d-flex justify-content-between">
+          <CounterToDo quantity={this.todoQuantity} />
+          <FooterNav />
+        </div>
+        <div>
+          <Button onClick={() => startDemo()}>Demo</Button>
+          <Button onClick={() => clearCompleted()}>Clear Completed</Button>
+          <Button onClick={() => localStorage.clear()}>Clear All</Button>
+        </div>
       </footer>
     );
   }

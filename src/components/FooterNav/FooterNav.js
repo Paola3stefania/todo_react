@@ -9,16 +9,21 @@ export default class FooterNav extends Component {
   render() {
     return (
       <div className="footer-nav">
-        <p>Im the footer Nav</p>
-        <ul>
-          <li>
-            <NavLink to="/">All</NavLink>
+        <ul className="d-flex list-unstyled">
+          <li className="footer-nav__page-link btn btn-warning">
+            <NavLink className="footer-link" to="/">
+              All
+            </NavLink>
           </li>
-          <li>
-            <NavLink to="/active">Active</NavLink>
+          <li className="footer-nav__page-link btn btn-warning">
+            <NavLink className="footer-link" to="/active">
+              Active
+            </NavLink>
           </li>
-          <li>
-            <NavLink to="/completed">Completed</NavLink>
+          <li className="footer-nav__page-link btn btn-warning">
+            <NavLink className="footer-link" to="/completed">
+              Completed
+            </NavLink>
           </li>
         </ul>
       </div>

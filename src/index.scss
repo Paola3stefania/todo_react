@@ -1,16 +1,25 @@
 @import "~bootstrap/scss/bootstrap";
 
 // the root has a background
+body {
+  background: {
+    image: url(https://source.unsplash.com/1600x900/?white)
+  }
+
+  /* dark for darl mode */
+  ;
+}
+
+
+
 
 .app-container {
-  background: {
-    color: $yellow;
-  }
+
+  width: 60%;
+  margin: auto;
+  /*height: 100vh;*/
+  margin-top: 10vh;
 
   ;
 
-}
-
-body {
-  height: 100vh;
 }

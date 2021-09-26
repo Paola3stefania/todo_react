@@ -6,11 +6,22 @@ import TaskInput from "../TaskInput";
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    // eslint-disable-next-line
+    console.log("Im the props from header: ", this.props);
+    const { handleSubmit } = this.props;
+    this.handleSubmit = handleSubmit;
+    // eslint-disable-next-line
+    console.log("Im the props from header: ", handleSubmit);
+    // this.handleSubmit()=this.props.handleSubmit();
+  }
+
   render() {
     return (
       <header>
         <h1>T O D O</h1>
-        <TaskInput />
+        <TaskInput handleSubmit={this.handleSubmit} {...this.props} />
       </header>
     );
   }

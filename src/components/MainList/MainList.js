@@ -18,8 +18,11 @@ export default class MainList extends Component {
     super(props);
     const { location } = this.props;
     const { tasks } = this.props;
+    const { handleSubmit } = this.props;
     this.location = location;
     this.tasks = tasks;
+    this.handleSubmit = handleSubmit;
+
     // eslint-disable-next-line
     console.log(this.props);
     // eslint-disable-next-line
@@ -28,12 +31,18 @@ export default class MainList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="main-list">
         <p>IM THE LIST FOR: {this.location.pathname} </p>
-        <ul {...this.tasks}>
+        <ul className="list-unstyled" {...this.tasks}>
           {this.tasks &&
             this.tasks.map((todos) => {
-              return <Task key={todos.id} tasks={todos} />;
+              return (
+                <Task
+                  key={todos.id}
+                  tasks={todos}
+                  handleSubmit={this.handleSubmit}
+                />
+              );
             })}
           {!this.tasks && <Ilustration />}
         </ul>
