@@ -19,20 +19,14 @@ export default class MainList extends Component {
     super(props);
     const { location } = this.props;
 
-    const { tasks } = this.props;
-    this.tasks = tasks;
-    const { handleSubmit } = this.props;
     const { pageDesc } = this.props;
     this.location = location;
 
-    this.handleSubmit = handleSubmit;
     this.pageDesc = pageDesc;
 
-    if (tasks) {
-      this.todoQuantity = Object.values(tasks).length;
-    } else {
-      this.todoQuantity = 0;
-    }
+    this.state = {
+      tasks: [],
+    };
 
     // cuando cambie el local storage cambiar el state del componente y volver a rederizar
 
@@ -43,7 +37,28 @@ export default class MainList extends Component {
     // o cunado alguien agregue un nuevo input
   }
 
+  componentDidMount() {
+    const { tasks } = this.props;
+
+    if (tasks) {
+      // eslint-disable-next-line
+      console.log("tasks of props", tasks.length);
+
+      this.setState({
+        tasks: tasks,
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    // eslint-disable-next-line
+    console.log("I updated");
+  }
+
   render() {
+    const { tasks } = this.state;
+    const { quant } = tasks.length;
+
     return (
       <div className="main-list p-4">
         <p>Currently Seeing: {this.pageDesc} </p>
@@ -51,24 +66,21 @@ export default class MainList extends Component {
           id={`task-list${this.location.pathname}`}
           key={`key_${this.location}`}
           className="list-unstyled"
-          {...this.tasks}
         >
-          {this.tasks &&
-            this.tasks.map((todos) => {
-              // eslint-disable-next-line
-              console.log("todos.name is ", todos.name);
+          {tasks &&
+            tasks.map((todos) => {
               return (
                 <Task
                   id={`id_${todos.id}`}
                   key={todos.name}
                   tasks={todos}
-                  handleSubmit={this.handleSubmit}
+                  {...todos}
                 />
               );
             })}
-          {!this.tasks && <Ilustration />}
+          {!tasks && <Ilustration />}
         </ul>
-        <CounterToDo quantity={this.todoQuantity} />
+        <CounterToDo {...quant} />
       </div>
     );
   }
