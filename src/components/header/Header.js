@@ -3,6 +3,7 @@
 
 import React, { Component } from "react";
 import TaskInput from "../TaskInput";
+import moon from "./moon_icon.png";
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class Header extends Component {
@@ -22,10 +23,7 @@ export default class Header extends Component {
       <header>
         <div className="header__title d-flex justify-content-between">
           <h1>T O D O</h1>
-          <img
-            src={require("src/components/Header/moon_icon.png")}
-            alt="dark-mode"
-          />
+          <img src={moon} alt="dark-mode" />
         </div>
         <TaskInput handleSubmit={this.handleSubmit} {...this.props} />
       </header>

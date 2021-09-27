@@ -5,7 +5,12 @@ import Header from "./components/Header";
 import MainList from "./components/MainList";
 import Footer from "./components/Footer";
 
-import { startDemo, getLocalStorageObject, handleSubmit } from "./utils/demo";
+import {
+  startDemo,
+  getLocalStorageObject,
+  handleSubmit,
+  appKeys,
+} from "./utils/demo";
 
 //* the App needs to know all the todo to pass it to
 //* the Footer for the COUNTER and to the MainList for Render them
@@ -17,52 +22,29 @@ function App() {
   // elaborates de lists.
   startDemo();
 
+  const arrayObjectKeys = appKeys();
+
   return (
     <div className="app-container">
       <Header handleSubmit={handleSubmit} />
       <BrowserRouter>
-        <Route
-          path="/"
-          exact
-          render={(routeProps) => (
-            <>
-              <MainList
-                {...routeProps}
-                {...getLocalStorageObject("task-todos")}
-                handleSubmit={handleSubmit}
-              />
-              <Footer {...getLocalStorageObject("task-todos")} />
-            </>
-          )}
-        />
-        <Route
-          path="/active"
-          exact
-          render={(routeProps) => (
-            <>
-              <MainList
-                {...routeProps}
-                {...getLocalStorageObject("task-active")}
-                handleSubmit={handleSubmit}
-              />
-              <Footer {...getLocalStorageObject("task-active")} />
-            </>
-          )}
-        />
-        <Route
-          path="/completed"
-          exact
-          render={(routeProps) => (
-            <>
-              <MainList
-                {...routeProps}
-                {...getLocalStorageObject("task-completed")}
-                handleSubmit={handleSubmit}
-              />
-              <Footer {...getLocalStorageObject("task-completed")} />
-            </>
-          )}
-        />
+        {arrayObjectKeys.map((appKey) => (
+          <Route
+            key={appKey.id}
+            exact
+            path={appKey.path}
+            render={(routeProps) => (
+              <>
+                <MainList
+                  {...routeProps}
+                  {...getLocalStorageObject(appKey.stringKey)}
+                  handleSubmit={handleSubmit}
+                />
+                <Footer {...{ ...getLocalStorageObject(appKey.stringKey) }} />
+              </>
+            )}
+          />
+        ))}
       </BrowserRouter>
     </div>
   );

@@ -6,6 +6,14 @@ const LOCAL_STORAGE_KEY = "task-todos";
 const COMPLETED_KEY = "task-completed";
 const ACTIVE_KEY = "task-active";
 
+function appKeys() {
+  return [
+    { id: "all-tasks", stringKey: LOCAL_STORAGE_KEY, path: "/" },
+    { id: "completed-tasks", stringKey: COMPLETED_KEY, path: "/completed" },
+    { id: "active-tasks", stringKey: ACTIVE_KEY, path: "/active" },
+  ];
+}
+
 function getLocalStorageObject(key) {
   let result;
   if (localStorage.getItem(key)) {
@@ -160,4 +168,5 @@ export {
   getTextFromTasks,
   handleSubmit,
   handleClick,
+  appKeys,
 };
