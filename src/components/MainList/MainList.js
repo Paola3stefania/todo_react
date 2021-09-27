@@ -40,7 +40,7 @@ export default class MainList extends Component {
             this.tasks.map((todos) => {
               return (
                 <Task
-                  key={todos.id}
+                  key={todos.name}
                   tasks={todos}
                   handleSubmit={this.handleSubmit}
                 />

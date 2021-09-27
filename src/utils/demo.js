@@ -132,6 +132,7 @@ function handleSubmit(e) {
 
   const newTask = {
     id: lastTaskId + 1,
+    name: `task_${this.id}`,
     text: e.target.value,
     isEdditing: false,
     done: false,

@@ -19,7 +19,6 @@ import {
 // *TODO __ headaer input onchange sets new value to local
 
 function App() {
-  // elaborates de lists.
   startDemo();
 
   const arrayObjectKeys = appKeys();
