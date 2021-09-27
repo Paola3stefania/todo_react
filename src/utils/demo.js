@@ -33,8 +33,7 @@ function getLocalStorageObject(key) {
   let result;
   if (localStorage.getItem(key)) {
     const arrayObjetos = JSON.parse(localStorage.getItem(key));
-    const list = Object.values(arrayObjetos);
-    result = { tasks: list };
+    result = { tasks: arrayObjetos };
     // eslint-disable-next-line
     console.log("devuelvo result: ", result);
   } else {

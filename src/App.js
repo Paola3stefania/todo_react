@@ -10,24 +10,18 @@ import {
   getLocalStorageObject,
   handleSubmit,
   appKeys,
+  clearCompleted,
 } from "./utils/demo";
 
 //* the App needs to know all the todo to pass it to
 //* the Footer for the COUNTER and to the MainList for Render them
 
-// *TODO -- rouer fot every page of the footer on click
-// *TODO __ headaer input onchange sets new value to local
-
 function App() {
-  startDemo();
-
-  const arrayObjectKeys = appKeys();
-
   return (
     <div className="app-container">
       <Header handleSubmit={handleSubmit} />
-      <BrowserRouter>
-        {arrayObjectKeys.map((appKey) => (
+      <BrowserRouter {...appKeys}>
+        {appKeys().map((appKey) => (
           <Route
             key={appKey.id}
             exact
@@ -40,11 +34,15 @@ function App() {
                   handleSubmit={handleSubmit}
                   pageDesc={appKey.pageDescr}
                 />
-                <Footer {...{ ...getLocalStorageObject(appKey.stringKey) }} />
               </>
             )}
           />
         ))}
+        <Footer
+          appKeys={appKeys}
+          startDemo={startDemo}
+          clearCompleted={clearCompleted}
+        />
       </BrowserRouter>
     </div>
   );

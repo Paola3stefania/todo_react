@@ -6,25 +6,26 @@ import { NavLink } from "react-router-dom";
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class FooterNav extends Component {
+  constructor(props) {
+    super(props);
+    const { appKeys } = this.props;
+    this.appKeys = appKeys;
+  }
+
   render() {
     return (
       <div className="footer-nav">
         <ul className="d-flex list-unstyled">
-          <li className="footer-nav__page-link btn btn-warning">
-            <NavLink className="footer-link" to="/">
-              All
-            </NavLink>
-          </li>
-          <li className="footer-nav__page-link btn btn-warning">
-            <NavLink className="footer-link" to="/active">
-              Active
-            </NavLink>
-          </li>
-          <li className="footer-nav__page-link btn btn-warning">
-            <NavLink className="footer-link" to="/completed">
-              Completed
-            </NavLink>
-          </li>
+          {this.appKeys().map((appKey) => (
+            <li
+              key={appKey.id}
+              className="footer-nav__page-link btn btn-warning"
+            >
+              <NavLink className="footer-link" to={appKey.path}>
+                {appKey.pageDescr}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
     );

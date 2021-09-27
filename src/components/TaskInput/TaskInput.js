@@ -14,11 +14,13 @@ export default class TaskInput extends Component {
     console.log("im the props of TaskInput", this.props);
     this.text = text;
 
+    const { name } = this.props;
+    this.name = name;
+
     const { id } = this.props;
     this.id = id;
     // eslint-disable-next-line
     console.log("im the id: ", id, "for the prop :", this.props);
-
     const { handleSubmit } = this.props;
     const { handleClick } = this.props;
 
@@ -57,6 +59,8 @@ export default class TaskInput extends Component {
         <Form>
           <Form.Group className="mb-3" controlId="taskInput">
             <Form.Control
+              key={`ìd_${this.id}`}
+              name={this.name}
               taskid={this.id}
               type="input"
               onClick={this.handleOnClick}

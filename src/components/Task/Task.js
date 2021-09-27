@@ -35,8 +35,10 @@ export default class Task extends Component {
         <Form.Check className="d-flex m-2" aria-label="radio 1" />
         <TaskInput
           {...this.tasks}
+          id={`id_${this.tasks.id}`}
           handleSubmit={this.handleSubmit}
           handleClick={this.handleClick}
+          draggable
         />
         <Button className="d-flex" variant="danger ml-2 mr-2">
           x
