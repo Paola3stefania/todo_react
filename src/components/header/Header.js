@@ -9,13 +9,8 @@ import moon from "./moon_icon.png";
 export default class Header extends Component {
   constructor(props) {
     super(props);
-    // eslint-disable-next-line
-    console.log("Im the props from header: ", this.props);
     const { handleSubmit } = this.props;
     this.handleSubmit = handleSubmit;
-    // eslint-disable-next-line
-    console.log("Im the props from header: ", handleSubmit);
-    // this.handleSubmit()=this.props.handleSubmit();
   }
 
   render() {

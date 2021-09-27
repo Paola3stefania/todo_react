@@ -7,8 +7,6 @@ import FooterNav from "../FooterNav";
 // has also a footer_nav with the pages for displaying the dif todos
 // has a button for clear completed tasks
 
-// *TODO cambiar los estados del Main asi renderiza solo sin el Link
-
 // eslint-disable-next-line react/prefer-stateless-function
 export default class Footer extends Component {
   constructor(props) {

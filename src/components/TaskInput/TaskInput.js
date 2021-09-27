@@ -9,9 +9,8 @@ import { saveIntoLocal } from "../../utils/demo";
 export default class TaskInput extends Component {
   constructor(props) {
     super(props);
+
     const { text } = this.props;
-    // eslint-disable-next-line
-    console.log("im the props of TaskInput", this.props);
     this.text = text;
 
     const { name } = this.props;
@@ -19,17 +18,12 @@ export default class TaskInput extends Component {
 
     const { id } = this.props;
     this.id = id;
-    // eslint-disable-next-line
-    console.log("im the id: ", id, "for the prop :", this.props);
+
     const { handleSubmit } = this.props;
     const { handleClick } = this.props;
 
     this.handleSubmit = handleSubmit;
-    // eslint-disable-next-line
-    console.log("Im the handle submit ", this.handleSubmit);
     this.handleClick = handleClick;
-    // eslint-disable-next-line
-    console.log("Im the handle click ", this.handleClick);
 
     function handleKeyPress(e) {
       if (e.key === "Enter") {
@@ -41,11 +35,7 @@ export default class TaskInput extends Component {
 
     function handleOnClick(e) {
       e.preventDefault();
-      // eslint-disable-next-line
-      console.log("I clicked ! ");
       const idClicked = e.target.getAttribute("taskid");
-      // eslint-disable-next-line
-      console.log("El id del task es: ", idClicked);
       saveIntoLocal("taskEditing", { taskid: idClicked });
     }
 
@@ -59,7 +49,7 @@ export default class TaskInput extends Component {
         <Form>
           <Form.Group className="mb-3" controlId="taskInput">
             <Form.Control
-              key={`ìd_${this.id}`}
+              key={this.id}
               name={this.name}
               taskid={this.id}
               type="input"

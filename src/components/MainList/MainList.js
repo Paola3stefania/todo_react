@@ -27,17 +27,10 @@ export default class MainList extends Component {
     this.pageDesc = pageDesc;
 
     if (tasks) {
-      // eslint-disable-next-line
-      console.log(tasks);
       this.todoQuantity = Object.values(tasks).length;
     } else {
       this.todoQuantity = 0;
     }
-
-    // eslint-disable-next-line
-    console.log("props de Mainlist: ", this.props);
-    // eslint-disable-next-line
-    console.log("soy los tasks: ", this.tasks);
   }
 
   render() {
