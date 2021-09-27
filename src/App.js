@@ -39,6 +39,7 @@ function App() {
                   {...routeProps}
                   {...getLocalStorageObject(appKey.stringKey)}
                   handleSubmit={handleSubmit}
+                  pageDesc={appKey.pageDescr}
                 />
                 <Footer {...{ ...getLocalStorageObject(appKey.stringKey) }} />
               </>

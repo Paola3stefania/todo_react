@@ -19,12 +19,14 @@ export default class MainList extends Component {
     const { location } = this.props;
     const { tasks } = this.props;
     const { handleSubmit } = this.props;
+    const { pageDesc } = this.props;
     this.location = location;
     this.tasks = tasks;
     this.handleSubmit = handleSubmit;
+    this.pageDesc = pageDesc;
 
     // eslint-disable-next-line
-    console.log(this.props);
+    console.log("props de Mainlist: ", this.props);
     // eslint-disable-next-line
     console.log("soy los tasks: ", this.tasks);
   }
@@ -32,7 +34,7 @@ export default class MainList extends Component {
   render() {
     return (
       <div className="main-list p-4">
-        <p>IM THE LIST FOR: {this.location.pathname} </p>
+        <p>Currently Seeing: {this.pageDesc} </p>
         <ul className="list-unstyled" {...this.tasks}>
           {this.tasks &&
             this.tasks.map((todos) => {
