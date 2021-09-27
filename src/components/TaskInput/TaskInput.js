@@ -42,6 +42,7 @@ export default class TaskInput extends Component {
       // eslint-disable-next-line
       console.log("I clicked ! ");
       const idClicked = e.target.getAttribute("taskid");
+      // eslint-disable-next-line
       console.log("El id del task es: ", idClicked);
       saveIntoLocal("taskEditing", { taskid: idClicked });
     }

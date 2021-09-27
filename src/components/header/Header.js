@@ -20,7 +20,13 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        <h1>T O D O</h1>
+        <div className="header__title d-flex justify-content-between">
+          <h1>T O D O</h1>
+          <img
+            src={require("src/components/Header/moon_icon.png")}
+            alt="dark-mode"
+          />
+        </div>
         <TaskInput handleSubmit={this.handleSubmit} {...this.props} />
       </header>
     );

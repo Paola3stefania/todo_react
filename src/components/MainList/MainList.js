@@ -31,7 +31,7 @@ export default class MainList extends Component {
 
   render() {
     return (
-      <div className="main-list">
+      <div className="main-list p-4">
         <p>IM THE LIST FOR: {this.location.pathname} </p>
         <ul className="list-unstyled" {...this.tasks}>
           {this.tasks &&
