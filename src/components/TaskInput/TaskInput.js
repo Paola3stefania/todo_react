@@ -18,18 +18,24 @@ export default class TaskInput extends Component {
 
     const { id } = this.props;
     this.id = id;
-
+    // eslint-disable-next-line
+    console.log("this is get in props ", this.props);
     const { handleSubmit } = this.props;
     const { handleClick } = this.props;
+    const { getTaskList } = this.props;
 
     this.handleSubmit = handleSubmit;
     this.handleClick = handleClick;
+    this.getTaskList = getTaskList;
+    // eslint-disable-next-line
+    console.log("this is get ", getTaskList);
 
     function handleKeyPress(e) {
       if (e.key === "Enter") {
         // eslint-disable-next-line
         console.log("enter press here! ");
         this.handleSubmit(e);
+        this.getTaskList;
       }
     }
 

@@ -5,6 +5,7 @@ export const toDoS = [
     text: "Ser Feliz, anda completame !",
     isEditing: false,
     done: false,
+    list: "active",
   },
   {
     id: 1,
@@ -12,6 +13,7 @@ export const toDoS = [
     text: "Ayyy ! Me estan editando. Ayuda",
     isEditing: true,
     done: false,
+    list: "active",
   },
   {
     id: 2,
@@ -19,5 +21,6 @@ export const toDoS = [
     text: "Bien hecho ! Estoy completa :)",
     isEditing: false,
     done: true,
+    list: "completed",
   },
 ];

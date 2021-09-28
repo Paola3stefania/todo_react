@@ -21,11 +21,12 @@ export default class MainList extends Component {
 
     const { tasks } = this.props;
     this.tasks = tasks;
-    const { handleSubmit } = this.props;
+    // eslint-disable-next-line
+    console.log("tak in manilist is ", this.tasks);
+
     const { pageDesc } = this.props;
     this.location = location;
 
-    this.handleSubmit = handleSubmit;
     this.pageDesc = pageDesc;
 
     if (tasks) {
@@ -34,6 +35,9 @@ export default class MainList extends Component {
       this.todoQuantity = 0;
     }
 
+    const { getTaskList } = this.props;
+    this.getTaskList = getTaskList;
+
     // cuando cambie el local storage cambiar el state del componente y volver a rederizar
 
     // cuando monte: ahi lee el local storage
@@ -41,6 +45,10 @@ export default class MainList extends Component {
     // si alguien aprieta un boton de demo de clear o etc, volver a cambiar el stado del componente
 
     // o cunado alguien agregue un nuevo input
+  }
+
+  componentDidMount() {
+    this.getTaskList();
   }
 
   render() {
@@ -59,10 +67,12 @@ export default class MainList extends Component {
               console.log("todos.name is ", todos.name);
               return (
                 <Task
+                  {...this.props}
                   id={`id_${todos.id}`}
                   key={todos.name}
                   tasks={todos}
                   handleSubmit={this.handleSubmit}
+                  getTaskList={this.getTaskList}
                 />
               );
             })}

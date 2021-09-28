@@ -13,18 +13,21 @@ function appKeys() {
       stringKey: LOCAL_STORAGE_KEY,
       path: "/",
       pageDescr: "All Tasks",
+      list: "todos",
     },
     {
       id: "completed-tasks",
       stringKey: COMPLETED_KEY,
       path: "/completed",
       pageDescr: "Completed Tasks",
+      list: "completed",
     },
     {
       id: "active-tasks",
       stringKey: ACTIVE_KEY,
       path: "/active",
       pageDescr: "Active Tasks",
+      list: "active",
     },
   ];
 }
@@ -135,6 +138,7 @@ function handleSubmit(e) {
     text: e.target.value,
     isEdditing: false,
     done: false,
+    list: "active",
   };
 
   // eslint-disable-next-line
