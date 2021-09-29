@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // has anchor links for displaying dif pages or views
 // eslint-disable-next-line react/prefer-stateless-function
@@ -22,9 +22,9 @@ export default class FooterNav extends Component {
               key={appKey.id}
               className="footer-nav__page-link btn btn-warning"
             >
-              <NavLink className="footer-link" to={appKey.path}>
+              <Link className="footer-link" to={appKey.path}>
                 {appKey.pageDescr}
-              </NavLink>
+              </Link>
             </li>
           ))}
         </ul>

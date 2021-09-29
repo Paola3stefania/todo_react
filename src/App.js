@@ -25,20 +25,26 @@ export default class App extends Component {
     };
 
     function getTaskList() {
+      const { tasks } = getLocalStorageObject("task-todos");
+      // eslint-disable-next-line
       console.log("seteando estado...");
-      if (getLocalStorageObject("task-todos")) {
-        const { tasks } = getLocalStorageObject("task-todos");
-        tasks
-          ? this.setState({ tasks: tasks, counter: tasks.lenght })
-          : this.setState({ tasks: [], counter: 0 });
-      }
+      tasks
+        ? this.setState({ tasks: tasks, counter: tasks.lenght })
+        : this.setState({ tasks: [], counter: 0 });
     }
 
     this.getTaskList = getTaskList.bind(this);
   }
 
   componentDidMount() {
+    // eslint-disable-next-line
+    console.count("renders");
     this.getTaskList();
+  }
+
+  componentDidUpdate() {
+    // eslint-disable-next-line
+    console.count("updating");
   }
 
   render() {

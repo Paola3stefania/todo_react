@@ -47,10 +47,6 @@ export default class MainList extends Component {
     // o cunado alguien agregue un nuevo input
   }
 
-  componentDidMount() {
-    this.getTaskList();
-  }
-
   render() {
     return (
       <div className="main-list p-4">

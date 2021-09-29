@@ -40,8 +40,9 @@ function getLocalStorageObject(key) {
     // eslint-disable-next-line
     console.log("devuelvo result: ", result);
   } else {
+    result = { tasks: [] };
     // eslint-disable-next-line
-    console.log("result is undefined");
+    console.log("result is undefined", result);
   }
 
   return result;
